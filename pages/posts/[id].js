@@ -21,14 +21,14 @@ export async function getStaticProps({ params }) {
 }
 
 export default function Post({ postData }) {
+  console.log(postData.contentHtml);
+
   return (
     <Layout>
       <Head>
         <title>{postData.title}</title>
       </Head>
       <h1>{postData.title}</h1>
-      <br />
-      {postData.id}
       <br />
       <Date dateString={postData.date} />
       <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
